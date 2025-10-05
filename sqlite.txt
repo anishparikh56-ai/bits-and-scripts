@@ -1,0 +1,35 @@
+# Connect to SQLite
+sqlite3 [database_file.db]
+
+# Show tables
+.tables
+
+# Create a table
+CREATE TABLE [table_name] (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+# Insert data
+INSERT INTO [table_name] (name) VALUES ('[value]');
+
+# Select data
+SELECT * FROM [table_name];
+SELECT name FROM [table_name] WHERE id = [id];
+
+# Update data
+UPDATE [table_name] SET name = '[new_value]' WHERE id = [id];
+
+# Delete data
+DELETE FROM [table_name] WHERE id = [id];
+
+# Drop a table
+DROP TABLE [table_name];
+
+# Backup a database
+sqlite3 [database_file.db] .backup [backup_file.db];
+
+# Restore a database
+sqlite3 [backup_file.db] .restore [database_file.db];
+

@@ -1,0 +1,47 @@
+# Connect to PostgreSQL
+psql -U [username] -d [database_name]
+
+# Show databases
+\l
+
+# Create a database
+CREATE DATABASE [database_name];
+
+# Connect to a database
+\c [database_name];
+
+# Show tables
+\dt
+
+# Create a table
+CREATE TABLE [table_name] (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+# Insert data
+INSERT INTO [table_name] (name) VALUES ('[value]');
+
+# Select data
+SELECT * FROM [table_name];
+SELECT name FROM [table_name] WHERE id = [id];
+
+# Update data
+UPDATE [table_name] SET name = '[new_value]' WHERE id = [id];
+
+# Delete data
+DELETE FROM [table_name] WHERE id = [id];
+
+# Drop a table
+DROP TABLE [table_name];
+
+# Drop a database
+DROP DATABASE [database_name];
+
+# Backup a database
+pg_dump [database_name] > [backup_file.sql];
+
+# Restore a database
+psql -U [username] -d [database_name] < [backup_file.sql];
+

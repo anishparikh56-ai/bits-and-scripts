@@ -1,0 +1,40 @@
+# Connect to MongoDB
+mongo [database_name]
+
+# Show databases
+show dbs
+
+# Create a database
+use [database_name];
+
+# Show collections
+show collections
+
+# Create a collection
+db.createCollection("[collection_name]");
+
+# Insert data
+db.[collection_name].insert({ name: "[value]" });
+
+# Select data
+db.[collection_name].find();
+db.[collection_name].find({ id: [id] });
+
+# Update data
+db.[collection_name].update({ id: [id] }, { $set: { name: "[new_value]" } });
+
+# Delete data
+db.[collection_name].remove({ id: [id] });
+
+# Drop a collection
+db.[collection_name].drop();
+
+# Drop a database
+db.dropDatabase();
+
+# Backup a database
+mongodump --db [database_name] --out [backup_directory];
+
+# Restore a database
+mongorestore [backup_directory];
+

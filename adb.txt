@@ -1,0 +1,143 @@
+# Process Management
+adb shell ps
+adb shell top
+adb shell kill [pid]
+adb shell killall [process_name]
+adb shell pm list packages
+adb shell dumpsys activity
+adb shell dumpsys meminfo [package_name]
+adb shell am start -n [package_name]/[activity_name]
+adb shell am force-stop [package_name]
+adb shell am broadcast -a [action]
+
+# User and Group Management
+adb shell pm create-user [username]
+adb shell pm remove-user [user_id]
+adb shell pm list users
+adb shell pm set-user-restriction [user_id] [restriction] [value]
+adb shell settings list secure
+adb shell settings put secure [setting] [value]
+adb shell settings get secure [setting]
+
+# System Monitoring and Performance
+adb shell top
+adb shell dumpsys cpuinfo
+adb shell dumpsys meminfo [package_name]
+adb shell dumpsys battery
+adb shell dumpsys activity
+adb shell getprop
+adb shell cat /proc/meminfo
+adb shell cat /proc/cpuinfo
+adb shell cat /proc/loadavg
+adb shell dumpsys gfxinfo [package_name]
+
+# Security and Permissions
+adb shell pm grant [package_name] [permission]
+adb shell pm revoke [package_name] [permission]
+adb shell settings get global [setting]
+adb shell settings put global [setting] [value]
+adb shell am start -a android.intent.action.VIEW -d [url]
+adb shell am start -a android.intent.action.SENDTO -d [mailto:[email]]
+adb shell pm list packages -f
+
+# File Management
+adb push [local_file] [remote_location]
+adb pull [remote_file] [local_location]
+adb shell ls [directory]
+adb shell cp [source] [destination]
+adb shell mv [source] [destination]
+adb shell rm [file]
+adb shell mkdir [directory]
+adb shell rmdir [directory]
+adb shell find [directory] -name [filename]
+adb shell cat [file]
+
+# Scripting and Automation
+adb shell
+adb shell input [command]
+adb shell am instrument -w -r -e debug false [package_name]/[test_runner]
+adb shell pm install [apk_file]
+adb shell pm uninstall [package_name]
+adb shell monkey -p [package_name] -c android.intent.category.LAUNCHER 1
+adb shell settings put global [setting] [value]
+
+# Package Management
+adb install [apk_file]
+adb uninstall [package_name]
+adb shell pm list packages
+adb shell pm install -r [apk_file]
+adb shell pm clear [package_name]
+adb shell pm get-install-location
+adb shell pm set-install-location [location]
+
+# Networking and Connectivity
+adb shell ip addr show
+adb shell ping [host]
+adb shell netstat
+adb shell ifconfig
+adb shell getprop | grep wlan
+adb shell dumpsys wifi
+adb shell dumpsys connectivity
+adb shell settings get global airplane_mode_on
+adb shell settings put global airplane_mode_on 1
+adb shell settings put global airplane_mode_on 0
+
+# Virtualization and Containers
+Android does not have traditional virtualization like Linux, but you can use:
+Android Emulator (part of Android Studio)
+Genymotion
+adb shell to interact with the emulator
+adb install to install apps on the emulator
+
+# Backup and Recovery
+adb backup -apk -shared -all -f [backup_file.ab]
+adb restore [backup_file.ab]
+adb shell am broadcast -a android.intent.action.BOOT_COMPLETED
+adb shell dumpsys backup
+adb shell pm list packages -f
+adb shell pm clear [package_name]
+
+# System Configuration
+adb shell settings list system
+adb shell settings put system [setting] [value]
+adb shell getprop
+adb shell setprop [property] [value]
+adb shell reboot
+adb shell reboot recovery
+adb shell reboot bootloader
+adb shell am broadcast -a android.intent.action.REBOOT
+
+# Kernel and Module Management
+adb shell cat /proc/version
+adb shell cat /proc/modules
+adb shell lsmod
+adb shell dmesg
+adb shell getprop | grep kernel
+adb shell cat /proc/cpuinfo
+adb shell cat /proc/meminfo
+
+# Development Tools
+Android Studio
+ADB (Android Debug Bridge)
+Gradle
+Android NDK
+Android SDK
+Emulator
+Genymotion
+Firebase
+Git
+JIRA
+
+# Web Services and Hosting
+Android does not have traditional web services like Linux, but you can use:
+Retrofit for API calls
+Volley for networking
+OkHttp for HTTP requests
+Firebase for backend services
+WebView for displaying web content
+
+# Database Management
+adb shell sqlite3 /data/data/[package_name]/databases/[database_name]
+adb shell dumpsys dbinfo
+adb shell pm list
+

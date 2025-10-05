@@ -1,0 +1,157 @@
+# 100 Essential Tech Hacks for Developers
+
+## Terminal & Command Line Mastery (1-20)
+
+1. **`ctrl+r`** - Reverse search through command history
+2. **`!!`** - Repeat last command, `!$` - Use last argument from previous command
+3. **`cd -`** - Switch to previous directory instantly
+4. **`pushd` / `popd`** - Navigate directory stack like browser history
+5. **`ctrl+a`** - Jump to beginning of line, `ctrl+e` - Jump to end
+6. **`ctrl+u`** - Delete from cursor to beginning, `ctrl+k` - Delete to end
+7. **`ctrl+w`** - Delete word before cursor
+8. **`alt+.`** - Insert last argument from previous command
+9. **`history | grep "command"`** - Search command history
+10. **`nohup command &`** - Run command that survives terminal close
+11. **`screen` or `tmux`** - Persistent terminal sessions
+12. **`ctrl+z` then `bg`** - Send process to background
+13. **`jobs` and `fg %1`** - Manage background jobs
+14. **`which command`** - Find location of executable
+15. **`type command`** - Check if command is alias, function, or binary
+16. **`apropos keyword`** - Find commands related to keyword
+17. **`ctrl+x ctrl+e`** - Edit current command in default editor
+18. **`fc`** - Edit and re-execute previous command
+19. **`!!:gs/old/new`** - Replace text in last command and run
+20. **`watch -n 2 command`** - Run command every 2 seconds
+
+## Git Wizardry (21-35)
+
+21. **`git commit --amend`** - Modify last commit message/content
+22. **`git stash` / `git stash pop`** - Temporarily save uncommitted changes
+23. **`git log --oneline --graph --all`** - Visual commit history
+24. **`git checkout -`** - Switch to previous branch
+25. **`git reset --soft HEAD~1`** - Undo last commit, keep changes staged
+26. **`git reset --hard HEAD~1`** - Undo last commit completely
+27. **`git cherry-pick commit-hash`** - Apply specific commit to current branch
+28. **`git rebase -i HEAD~3`** - Interactive rebase last 3 commits
+29. **`git bisect start`** - Binary search for bug-introducing commit
+30. **`git blame file.txt`** - See who changed each line
+31. **`git show HEAD:file.txt`** - Show file content from specific commit
+32. **`git diff --staged`** - See staged changes
+33. **`git clean -fd`** - Remove untracked files and directories
+34. **`git reflog`** - See all branch/HEAD movements (recovery tool)
+35. **`git shortlog -sn`** - Contributor statistics
+
+## Code Editor Superpowers (36-50)
+
+36. **`Ctrl+Shift+P`** - Command palette (VS Code/most editors)
+37. **`Ctrl+D`** - Select next occurrence of current word
+38. **`Ctrl+Shift+L`** - Select all occurrences
+39. **`Alt+Click`** - Multiple cursors
+40. **`Ctrl+/`** - Toggle line comment
+41. **`Ctrl+Shift+K`** - Delete entire line
+42. **`Alt+Up/Down`** - Move line up/down
+43. **`Ctrl+Shift+\`** - Jump to matching bracket
+44. **`Ctrl+G`** - Go to line number
+45. **`Ctrl+P`** - Quick file search
+46. **`Ctrl+Shift+F`** - Global find in all files
+47. **`Ctrl+K Ctrl+C`** - Comment selected lines
+48. **`Ctrl+K Ctrl+U`** - Uncomment selected lines
+49. **`Ctrl+Shift+V`** - Markdown preview (VS Code)
+50. **`F12`** - Go to definition
+
+## System Administration Hacks (51-65)
+
+51. **`htop`** - Interactive process viewer (better than top)
+52. **`df -h`** - Disk usage in human-readable format
+53. **`du -sh *`** - Directory sizes in current folder
+54. **`lsof -i :8080`** - See what's using specific port
+55. **`netstat -tulpn`** - Show all listening ports
+56. **`ps aux | grep process_name`** - Find specific processes
+57. **`kill -9 PID`** - Force kill process
+58. **`killall process_name`** - Kill all processes by name
+59. **`uptime`** - System load and uptime
+60. **`free -h`** - Memory usage in human-readable format
+61. **`iostat -x 1`** - Real-time I/O statistics
+62. **`tail -f /var/log/file.log`** - Follow log file in real-time
+63. **`grep -r "search_term" /path`** - Recursive text search
+64. **`find . -name "*.js" -mtime -7`** - Find JS files modified in last 7 days
+65. **`chmod +x script.sh`** - Make file executable
+
+## Docker & Container Hacks (66-75)
+
+66. **`docker ps -q | xargs docker stop`** - Stop all running containers
+67. **`docker system prune -a`** - Clean up everything (containers, images, volumes)
+68. **`docker exec -it container_name bash`** - Enter running container
+69. **`docker logs -f container_name`** - Follow container logs
+70. **`docker build -t name .`** - Build image from current directory
+71. **`docker run --rm -it image_name`** - Run container and remove after exit
+72. **`docker cp file.txt container_name:/path`** - Copy files to/from container
+73. **`docker inspect container_name`** - Detailed container information
+74. **`docker stats`** - Real-time container resource usage
+75. **`docker-compose up -d`** - Start services in detached mode
+
+## Network & Web Development (76-85)
+
+76. **`curl -I website.com`** - Get HTTP headers only
+77. **`curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' url`** - POST JSON
+78. **`wget -r --no-parent website.com`** - Download entire website
+79. **`ssh-keygen -t ed25519`** - Generate SSH key (modern algorithm)
+80. **`ssh -L 8080:localhost:3000 user@server`** - SSH tunnel (port forwarding)
+81. **`scp file.txt user@server:/path`** - Secure copy over SSH
+82. **`rsync -av --progress source/ user@server:/dest/`** - Efficient file sync
+83. **`nslookup domain.com`** - DNS lookup
+84. **`dig domain.com +short`** - Quick DNS query
+85. **`ping -c 4 8.8.8.8`** - Test connectivity (4 packets)
+
+## Programming Language Shortcuts (86-95)
+
+86. **Python HTTP Server**: `python -m http.server 8000`
+87. **Pretty print JSON**: `echo '{"key":"value"}' | python -m json.tool`
+88. **Node.js REPL**: `node -e "console.log('Hello')"`
+89. **npm package info**: `npm info package-name`
+90. **Install specific version**: `npm install package@1.2.3`
+91. **Check outdated packages**: `npm outdated`
+92. **Update all packages**: `npm update`
+93. **Ruby one-liner**: `ruby -e "puts 'Hello World'"`
+94. **PHP syntax check**: `php -l script.php`
+95. **Compile and run C**: `gcc file.c -o output && ./output`
+
+## Productivity & Automation (96-100)
+
+96. **Create aliases**: `alias ll='ls -la'` (add to ~/.bashrc)
+97. **Function for common tasks**:
+```bash
+mkcd() { mkdir -p "$1" && cd "$1"; }
+```
+98. **Batch rename files**: `rename 's/old/new/' *.txt`
+99. **Generate random password**: `openssl rand -base64 32`
+100. **Quick backup**: `tar -czf backup-$(date +%Y%m%d).tar.gz folder/`
+
+## Bonus Browser DevTools Hacks
+
+- **`$$('selector')`** - Query all elements (like querySelectorAll)
+- **`$0`** - Reference last selected element in Elements tab
+- **`console.table(array)`** - Display arrays/objects as formatted table
+- **`copy(object)`** - Copy variable to clipboard
+- **`monitor(functionName)`** - Log when function is called
+- **Network tab**: Right-click request → "Copy as cURL"
+- **`console.time('label')`** and **`console.timeEnd('label')`** - Measure execution time
+
+## Quick File Processing Hacks
+
+- **Remove duplicate lines**: `sort file.txt | uniq`
+- **Count lines**: `wc -l file.txt`
+- **Show file differences**: `diff file1.txt file2.txt`
+- **Replace text in file**: `sed -i 's/old/new/g' file.txt`
+- **Extract specific columns**: `cut -d',' -f1,3 file.csv`
+- **Merge files**: `cat file1.txt file2.txt > merged.txt`
+
+## Advanced Git Shortcuts
+
+- **Create branch and switch**: `git checkout -b new-branch`
+- **Delete merged branches**: `git branch --merged | grep -v master | xargs git branch -d`
+- **Show files in commit**: `git show --name-only commit-hash`
+- **Staged vs unstaged diff**: `git diff --cached`
+- **Search commit messages**: `git log --grep="bug fix"`
+
+These hacks cover everything from basic terminal navigation to advanced development workflows. Start incorporating 5-10 that apply to your daily work, then gradually add more as they become second nature. The key is consistent practice until they become muscle memory!

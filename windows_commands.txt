@@ -1,0 +1,296 @@
+# Process Management
+tasklist
+taskkill
+start
+stop
+wmic process
+Get-Process
+Stop-Process
+Get-Service
+Start-Service
+Stop-Service
+Get-Job
+Start-Job
+Stop-Job
+Get-Command
+Get-Help
+Get-EventLog
+Get-Event
+
+# User and Group Management
+net user
+net localgroup
+net group
+net user [username] [password] /add
+net user [username] /delete
+net localgroup [groupname] [username] /add
+net localgroup [groupname] [username] /delete
+whoami
+whoami /groups
+net accounts
+net session
+Get-LocalUser
+Get-LocalGroup
+Add-LocalGroupMember
+Remove-LocalGroupMember
+Get-LocalGroupMember
+
+# System Monitoring and Performance
+tasklist
+taskmgr
+perfmon
+Get-Process
+Get-Service
+Get-EventLog
+Get-Event
+Get-PerformanceCounter
+Get-ComputerInfo
+Get-Process | Sort-Object CPU -Descending
+Get-Process | Sort-Object WS -Descending
+Get-Process | Measure-Object
+Get-Process | Where-Object { $_.CPU -gt 100 }
+Get-EventLog -LogName System
+Get-EventLog -LogName Application
+
+# Security and Permissions
+netsh advfirewall
+Get-NetFirewallRule
+Get-NetFirewallProfile
+icacls
+net user
+net localgroup
+Get-LocalUser
+Get-LocalGroup
+Get-LocalGroupMember
+Get-Acl
+Set-Acl
+Get-EventLog
+Get-Event
+Get-LocalGroup | Where-Object { $_.Name -eq "Administrators" }
+
+# File Management
+dir
+copy
+move
+del
+mkdir
+rmdir
+findstr
+robocopy
+xcopy
+type
+more
+notepad
+Get-ChildItem
+Get-Content
+Set-Content
+Remove-Item
+New-Item
+Rename-Item
+
+# Scripting and Automation
+PowerShell
+cmd
+batch files (.bat)
+Windows Script Host (WSH)
+Windows PowerShell ISE
+Task Scheduler
+schtasks
+Invoke-Expression
+Start-Process
+Get-Command
+Get-Help
+Start-Job
+Stop-Job
+New-ScheduledTask
+Register-ScheduledTask
+
+# Package Management
+winget
+choco (Chocolatey)
+scoop
+msiexec
+Get-Package
+Install-Package
+Uninstall-Package
+Update-Package
+Find-Package
+Get-PackageProvider
+Get-PackageSource
+Add-PackageSource
+
+# Networking and Connectivity
+ipconfig
+ping
+tracert
+nslookup
+netstat
+Get-NetIPAddress
+Get-NetRoute
+Get-NetAdapter
+Get-NetTCPConnection
+Get-NetUDPEndpoint
+Test-NetConnection
+telnet
+netsh interface
+
+# Virtualization and Containers
+Hyper-V Manager
+PowerShell (for Hyper-V)
+docker
+vagrant
+Get-VM
+Start-VM
+Stop-VM
+Remove-VM
+Get-Container
+Start-Container
+Stop-Container
+docker-compose
+Get-Container
+Get-VMNetworkAdapter
+
+# Backup and Recovery
+robocopy
+wbadmin
+Get-WBJob
+Get-WBPolicy
+Restore-WBFile
+Backup-WBFile
+Get-Volume
+Get-ComputerInfo
+System Restore
+Windows Backup
+File History
+Backup and Restore (Windows 7)
+
+# System Configuration
+msconfig
+Get-Service
+Set-Service
+Get-ComputerInfo
+Get-ItemProperty
+Set-ItemProperty
+Get-ChildItem
+Get-Content
+Set-Content
+Get-EventLog
+Get-Event
+Get-LocalGroup
+Get-LocalUser
+
+# Kernel and Module Management
+Get-WindowsFeature
+Get-Module
+Import-Module
+Remove-Module
+Get-PnpDevice
+Get-WmiObject
+Get-ComputerInfo
+Get-EventLog
+Get-Event
+Get-Process
+Get-Service
+
+# Development Tools
+Visual Studio
+PowerShell
+Windows SDK
+Git
+Docker
+vagrant
+npm
+pip
+choco
+winget
+VS Code
+Eclipse
+IntelliJ IDEA
+NetBeans
+PyCharm
+Rider
+
+# Web Services and Hosting
+IIS (Internet Information Services)
+netsh http
+Get-WebSite
+Get-WebApplication
+Start-WebApp
+Stop-WebApp
+Get-Website
+Get-WebAppPool
+New-WebApp
+Remove-WebApp
+Get-Command
+Get-Help
+
+# Database Management
+sqlcmd
+Get-SqlDatabase
+Invoke-Sqlcmd
+Get-SqlInstance
+Get-SqlServer
+Get-SqlTable
+Get-SqlUser
+Get-SqlLogin
+Get-SqlAgentJob
+Get-SqlAgentJobHistory
+Get-SqlBackupHistory
+Get-SqlDatabaseBackup
+Get-SqlDatabaseRestore
+New-SqlDatabase
+Remove-SqlDatabase
+Backup-SqlDatabase
+Restore-SqlDatabase
+
+# Logging and Auditing
+Get-EventLog
+Get-WinEvent
+Get-Event
+Clear-EventLog
+Export-EventLog
+Get-EventLog -LogName Security
+Get-EventLog -LogName Application
+Get-EventLog -LogName System
+Get-WinEvent -LogName Security
+Get-WinEvent -LogName Application
+Get-WinEvent -LogName System
+Write-EventLog
+New-EventLog
+Remove-EventLog
+
+# Cloud and Remote Services
+aws (AWS CLI)
+gcloud (Google Cloud SDK)
+az (Azure CLI)
+PowerShell Remoting
+Remote Desktop (mstsc)
+ssh (OpenSSH)
+scp (OpenSSH)
+sftp (OpenSSH)
+Invoke-Command
+Enter-PSSession
+Exit-PSSession
+New-PSSession
+Get-PSSession
+Remove-PSSession
+Test-WSMan
+Get-Command
+Get-Help
+
+# Hardware Management
+wmic
+Get-WmiObject
+Get-PnpDevice
+Get-ComputerInfo
+Get-PhysicalDisk
+Get-Disk
+Get-Volume
+Get-Partition
+Get-Process
+Get-Service
+Get-EventLog
+Get-Event
+Get-Command
+Get-Help
+
