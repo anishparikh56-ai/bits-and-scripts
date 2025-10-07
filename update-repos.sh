@@ -42,13 +42,14 @@ while IFS= read -r repo; do
 		echo "Cloning repository..."
 		git clone "git@github.com:${username}/$repo"
 	fi
-	if [ "$(git -C $repo config user.name)" != "Archie Linux" ]; then
-		echo "Updating Git user configuration for $repo"
-		git -C $repo config user.name "Archie Linux"
-		git -C $repo config user.email "archie.linux@tech.com"
-		GIT_SEQUENCE_EDITOR=: git -C $repo rebase -i --root --exec "git commit --amend --no-edit --reset-author"
-		git -C $repo push --force origin main
-	fi
+
+	# if [ "$(git -C $repo config user.name)" != "Archie Linux" ]; then
+	echo "Updating Git user configuration for $repo"
+	git -C $repo config user.name "Archie Linux"
+	git -C $repo config user.email "archie.linux@tech.com"
+	GIT_SEQUENCE_EDITOR=: git -C $repo rebase -i --root --exec "git commit --amend --no-edit --reset-author"
+	git -C $repo push --force origin main
+	# fi
 done < repos.txt
 
 echo "All repositories have been cloned."
