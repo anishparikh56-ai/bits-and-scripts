@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ARCHIVE=0  # Default: Do not archive
-username="archie-linux"
+username="anish7610"
 
 # Parse command-line arguments
 while [[ "$#" -gt 0 ]]; do
