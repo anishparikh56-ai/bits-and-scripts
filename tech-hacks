@@ -153,5 +153,6 @@ mkcd() { mkdir -p "$1" && cd "$1"; }
 - **Show files in commit**: `git show --name-only commit-hash`
 - **Staged vs unstaged diff**: `git diff --cached`
 - **Search commit messages**: `git log --grep="bug fix"`
+- **Git Rebase From Root**: `GIT_SEQUENCE_EDITOR="sed -i.bak '2,\$s/^pick/squash/'" git rebase -i --root`
 
 These hacks cover everything from basic terminal navigation to advanced development workflows. Start incorporating 5-10 that apply to your daily work, then gradually add more as they become second nature. The key is consistent practice until they become muscle memory!
